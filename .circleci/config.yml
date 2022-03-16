@@ -63,6 +63,8 @@ workflows:
   version: 2
   plan_approve_apply:
     jobs:
+      - hold-start:
+          type: approval
       - plan-apply
       - hold-apply:
           type: approval
