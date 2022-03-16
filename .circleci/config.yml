@@ -41,6 +41,7 @@ jobs:
       - run:
           name: terraform create destroy plan
           command: |
+            echo "start planning"
             terraform plan -destroy -out tfdestroy -var-file variables.tfvars
       - persist_to_workspace:
           root: .
