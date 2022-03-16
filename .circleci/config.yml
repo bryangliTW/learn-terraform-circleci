@@ -65,7 +65,9 @@ workflows:
     jobs:
       - hold-start:
           type: approval
-      - plan-apply
+      - plan-apply:
+          requires:
+            - hold-start
       - hold-apply:
           type: approval
           requires:
