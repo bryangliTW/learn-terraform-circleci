@@ -3,6 +3,8 @@ version: 2
 jobs:
   test:
     working_directory: /tmp/project
+    docker: 
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
@@ -16,6 +18,8 @@ jobs:
             - .
 
   workspace:
+    docker: 
+      - image: cimg/node:current
     steps:
       - attach_workspace:
           at: .
