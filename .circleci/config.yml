@@ -12,25 +12,14 @@ jobs:
           command: |
             echo "planning!!"
             echo "a sample text" > file-lists.txt
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
 
   workspace:
     docker: 
       - image: cimg/node:current
     steps:
-      - attach_workspace:
-          at: .
       - run:
           name: is file there
-          command: |
-            ls
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
+          command: ls
 
 workflows:
   version: 2
