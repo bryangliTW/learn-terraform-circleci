@@ -12,6 +12,10 @@ jobs:
           command: |
             echo "planning!!"
             echo "a sample text" > file-lists.txt
+      - persist_to_workspace:
+          root: .
+          paths: 
+            - /tmp/project
 
   workspace:
     docker: 
