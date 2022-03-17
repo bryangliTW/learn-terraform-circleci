@@ -11,7 +11,7 @@ jobs:
           name: terraform init & plan
           command: |
             echo "planning!!"
-            "a sample text" > file-lists.txt
+            echo "a sample text" > file-lists.txt
       - persist_to_workspace:
           root: .
           paths:
