@@ -21,6 +21,8 @@ jobs:
     docker: 
       - image: cimg/node:current
     steps:
+      - attach_workspace:
+          at: .
       - run:
           name: is file there
           command: ls
